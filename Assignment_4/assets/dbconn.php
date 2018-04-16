@@ -8,7 +8,7 @@
 
 //connects to the database
 function dbConn(){
-$dsn = "mysql:host=localhost;dbname=PHPClassFall2017";
+$dsn = "mysql:host=localhost;dbname=PHPClassFall2018";
 $username = "root";
 
 try{
