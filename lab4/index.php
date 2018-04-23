@@ -5,6 +5,7 @@ require_once("assets/dbconn.php");
 require_once("assets/corps.php");
 require_once("assets/corp_form.php");
 include_once("assets/header.php");
+include_once("assets/sort_input.html");
 
 //sets our connection function to a variable for ease of use
 $db = dbConn();

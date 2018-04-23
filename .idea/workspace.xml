@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94867960-4505-47ac-99cb-0e0dc1f85497" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/assets/actor_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/assets/actor_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/assets/actors.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/assets/actors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/assets/dbconn.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/assets/dbconn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/assets/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/assets/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/assets/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/assets/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/lab2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/lab2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2(2017)/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab2(2017)/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/PHPClassFall2018.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/assets/corp_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/assets/corps.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/assets/dbconn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/assets/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/assets/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_3/assets/dbconn.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_3/assets/dbconn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_4/assets/dbconn.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_4/assets/dbconn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_4/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_4/index.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lab2/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lab2/assets/dbconn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment_3/assets/dbconn.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="dbconn.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assignment_4/assets/dbconn.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lab2/assets/dbconn.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1600" />
+    <option name="height" value="874" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PHP-2018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHP-2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PHP-2018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHP-2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Assignment_4" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PHP-2018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHP-2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Assignment_4" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Assignment_4/assets" />
+      <recent name="$PROJECT_DIR$/Assignment_3/assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94867960-4505-47ac-99cb-0e0dc1f85497" name="Default" comment="" />
+      <created>1524484402357</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524484402357</updated>
+      <workItem from="1524484403939" duration="990000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="990000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="PHP-CGI Server" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2625" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lab2/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab2/assets/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment_3/assets/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment_4/assets/dbconn.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
