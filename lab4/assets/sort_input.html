@@ -1,6 +1,6 @@
 
-<form id="sort"  method='get' action='#'>
-    <label for="column_sort">Sort Column By: </label>
+<section><form id="sort"  method='get' action='./index.php'>
+    <label for="column_sort">Sort By: </label>
 <select name="column_sort" id="column_sort">
 <option value="id">id number</option>
 <option value="corp">corporation name</option>
@@ -10,5 +10,11 @@
 <option value="owner">owner</option>
 <option value="phone">phone</option>
 </select>
-
-</form>
+    <label for='asc'>Ascending: </label>
+    <input type='radio' name='dir' value='ASC' id = 'asc' />
+    <label for='desc'>Descending: </label>
+    <input type='radio' name='dir' value='DESC' id = 'desc' />
+    <input type='hidden' name='action' value='sort' />
+    <input type='submit' />
+    <input type='submit' name='action' value='Reset' />
+</form></section>
