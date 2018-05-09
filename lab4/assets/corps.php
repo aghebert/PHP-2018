@@ -50,7 +50,7 @@ function sqlQuery($db)
 
 
 }
-function getCorporationsAsTable($db)
+function getCorporationsAsTable($db, $sql)
 {
     try {
         //grabs everything from corps table

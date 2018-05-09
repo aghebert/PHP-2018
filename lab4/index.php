@@ -24,10 +24,11 @@ $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ?? "";
 //switch case based on buttons pushed, will do different things
 switch ($action) {
 
-    //case "sort":
-
-
-       // break;
+    case "sort":
+        echo addButton();
+        $sqlSORT = sqlQuery($db);
+        echo getCorporationsAsTable($db, $sqlSORT);
+       break;
 
     case "Add Company":
         echo addHTML();
@@ -68,7 +69,8 @@ switch ($action) {
         break;
     default:
         echo addButton();
-        echo getCorporationsAsTable($db);
+        $sqlDEFAULT = sqlQuery($db);
+        echo getCorporationsAsTable($db, $sqlDEFAULT);
 }
 
 
