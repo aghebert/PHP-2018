@@ -23,6 +23,12 @@ $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING) ?? "";
 
 //switch case based on buttons pushed, will do different things
 switch ($action) {
+
+    //case "sort":
+
+
+       // break;
+
     case "Add Company":
         echo addHTML();
         echo goBackIndex();
@@ -51,7 +57,7 @@ switch ($action) {
 
         echo getCorporation($db, $id);
         //adds an update and delete button to the page
-        echo "<a href='?action=Update&id=" . $id ."'>Update</a>";
+        echo "<a href='?action=Update&id=" . $id . "'>Update</a>";
         echo "<br /> <br />";
         echo "<a href='?action=Delete&id=" . $id . "'>Delete</a>";
         echo goBackIndex();

@@ -9,40 +9,88 @@
 //Grabs all the information from the database and formats them into HTML
 //While adding buttons to either read the entire information on them, update them,
 //or delete them
+
+
+
+function sqlQuery($db)
+{
+    $sql = '';
+
+    $colSort = '';
+    $direction = '';
+    $column = '';
+    $term = '';
+
+    if (!empty($_GET["column_sort"])) {
+        $colSort = $_GET["column_sort"];
+    }
+    if (!empty($_GET["dir"])) {
+        $direction = $_GET["dir"];
+    }
+
+    if (!empty($_GET["col"])) {
+        $column = $_GET["col"];
+    }
+
+    if (!empty($_GET["term"])) {
+        $term = $_GET["term"];
+    }
+
+    if (!empty($colSort)) {
+        if ($direction == "ASC") {
+           return $db->prepare("SELECT * FROM corps ORDER BY " . $colSort . " ASC");
+        } else {
+            return $db->prepare("SELECT * FROM corps ORDER BY " . $colSort . " DESC");
+        }
+    } else {
+        return $db->prepare("SELECT * FROM corps");
+
+    }
+
+
+
+}
 function getCorporationsAsTable($db)
 {
     try {
         //grabs everything from corps table
-        $sql = $db->prepare("SELECT * FROM corps");
-        $sql->execute();
+        // $sql = $db->prepare("SELECT * FROM corps");
+        $sql = sqlQuery($db);
+        //if ($sql != null) {
+           // print_r($sql);
+            $sql->execute();
 
-        $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
-        if ($sql->rowCount() > 0) {
-            $table = "<table class='table'>" . PHP_EOL;
+            $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
+            if ($sql->rowCount() > 0) {
+                $table = "<table class='table'>" . PHP_EOL;
 //for loop that creates the html table
-            foreach ($corps as $corpor) {
-                $table .= "<tr><td>";
-                $table .= $corpor['corp'];
-                //$table .= "</td><td><form action='#' method='post'><input type='hidden' name='id' value='" . $corpor['id'] . "' /><input type='submit' name='action' value='Read' /> </form>";
-                $table .= "</td><td><a href='?action=Read&id=" . $corpor['id'] . "'>Read</a>";
-                $table .= "</td><td><a href='?action=Update&id=" . $corpor['id'] . "'>Update</a>";
-                $table .= "</td><td><a href='?action=Delete&id=" . $corpor['id'] . "'>Delete</a>";
-                $table .= "</td></tr>";
+                foreach ($corps as $corpor) {
+                    $table .= "<tr><td>";
+                    $table .= $corpor['corp'];
+                    //$table .= "</td><td><form action='#' method='post'><input type='hidden' name='id' value='" . $corpor['id'] . "' /><input type='submit' name='action' value='Read' /> </form>";
+                    $table .= "</td><td><a href='?action=Read&id=" . $corpor['id'] . "'>Read</a>";
+                    $table .= "</td><td><a href='?action=Update&id=" . $corpor['id'] . "'>Update</a>";
+                    $table .= "</td><td><a href='?action=Delete&id=" . $corpor['id'] . "'>Delete</a>";
+                    $table .= "</td></tr>";
+                }
+                $table .= "</table>" . PHP_EOL;
+            } else {
+                $table = "There are no corporations in the DB" . PHP_EOL;
             }
-            $table .= "</table>" . PHP_EOL;
-        } else {
-            $table = "There are no corporations in the DB" . PHP_EOL;
+            return $table;
+
+
         }
-        return $table;
 
+    catch
+        (PDOException $e) {
+            die("There was a problem getting the list");
+        }
 
-    } catch (PDOException $e) {
-        die("There was a problem getting the list");
-    }
 }
 
 //adds a corporation to the database
-function addCorporation($db, $corp,  $email, $zipcode, $owner, $phone)
+function addCorporation($db, $corp, $email, $zipcode, $owner, $phone)
 {
     try {
         $sql = $db->prepare("INSERT INTO corps VALUES (null, :corp, NOW(), :email, :zipcode, :owner, :phone)");
@@ -104,7 +152,8 @@ function getCorporation($db, $id)
 }
 
 //edits the desired table data by use of $id
-function updateCorportation($db, $id, $corp, $email, $zipcode, $owner, $phone){
+function updateCorportation($db, $id, $corp, $email, $zipcode, $owner, $phone)
+{
     try {
         $sql = $db->prepare("UPDATE corps SET corp=:corp, email=:email, zipcode=:zipcode, owner=:owner, phone=:phone WHERE id=:id");
         $sql->bindParam(':id', $id);
@@ -125,7 +174,8 @@ function updateCorportation($db, $id, $corp, $email, $zipcode, $owner, $phone){
 }
 
 //deletes desired table row using $id
-function deleteCorporation($db, $id){
+function deleteCorporation($db, $id)
+{
     try {
         $sql = $db->prepare("DELETE FROM corps WHERE id=:id");
         $sql->bindParam(':id', $id);
