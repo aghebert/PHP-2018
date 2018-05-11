@@ -8,6 +8,7 @@
  */
 $currentDay = date('Y\-m\-d');
 
+//adds an html button to whatever page it's called from
 function addButton(){
     $table = "<form  method=\"POST\" action=\"#\">" . PHP_EOL;
     $table .= "<br /> <br /><input type=\"submit\" name=\"action\" value=\"Add Company\"/> <br /><br />";
@@ -15,6 +16,7 @@ function addButton(){
     return $table;
 }
 
+//loads up a page to allows the user to add a company
 function addHTML()
 {
     $table = "<form  method=\"POST\" action=\"#\">" . PHP_EOL;
@@ -38,6 +40,7 @@ function addHTML()
 
 }
 
+//loads up a page that allows the user to update information on a company
 function updateHTML($db, $id)
 {
 
@@ -65,6 +68,7 @@ function updateHTML($db, $id)
     return $table;
 }
 
+//go back to index wherever you are
 function goBackIndex()
 {$table = "<br />";
     $table .= "<form  method=\"GET\" action=\"#\">" . PHP_EOL;

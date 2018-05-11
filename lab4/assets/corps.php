@@ -10,24 +10,12 @@
 //While adding buttons to either read the entire information on them, update them,
 //or delete them
 
-
-
-function sqlQuery($db)
-{
-    $sql = '';
-
-    $colSort = '';
-    $direction = '';
+//Searchs the sql database for parameters provided by the users
+function sqlSearch($db){
     $column = '';
     $term = '';
 
-    if (!empty($_GET["column_sort"])) {
-        $colSort = $_GET["column_sort"];
-    }
-    if (!empty($_GET["dir"])) {
-        $direction = $_GET["dir"];
-    }
-
+    //get variables from url and set if it exists
     if (!empty($_GET["col"])) {
         $column = $_GET["col"];
     }
@@ -36,8 +24,37 @@ function sqlQuery($db)
         $term = $_GET["term"];
     }
 
+    //if it exists, search the SQL database
+    if (!empty($term)) {
+        //returns the prepared dbo stated to whoever called this functions
+           return $db->prepare("SELECT * FROM corps WHERE $column LIKE '%" . $term . "%' ");
+
+    } else {
+        //grabs everything from corps table
+        return $db->prepare("SELECT * FROM corps");
+
+    }
+
+}
+
+function sqlSort($db)
+{
+
+    $colSort = '';
+    $direction = '';
+//get variables from url and set if it exists
+    if (!empty($_GET["column_sort"])) {
+        $colSort = $_GET["column_sort"];
+    }
+    if (!empty($_GET["dir"])) {
+        $direction = $_GET["dir"];
+    }
+
+
+
     if (!empty($colSort)) {
         if ($direction == "ASC") {
+            //returns the prepared dbo stated to whoever called this functions
            return $db->prepare("SELECT * FROM corps ORDER BY " . $colSort . " ASC");
         } else {
             return $db->prepare("SELECT * FROM corps ORDER BY " . $colSort . " DESC");
@@ -50,14 +67,12 @@ function sqlQuery($db)
 
 
 }
+//gets the corporations from the database depending on what the prepared statement is in variable $sql.
+//This function used to require $db, but now that is handled by the function that returns the prepared dbo statement --> sqlSort/Search()
 function getCorporationsAsTable($db, $sql)
 {
     try {
-        //grabs everything from corps table
-        // $sql = $db->prepare("SELECT * FROM corps");
-        $sql = sqlQuery($db);
-        //if ($sql != null) {
-           // print_r($sql);
+
             $sql->execute();
 
             $corps = $sql->fetchAll(PDO::FETCH_ASSOC);
