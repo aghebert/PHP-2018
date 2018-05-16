@@ -7,10 +7,40 @@
  */
 
 require_once("assets/dbconn.php");
+require_once("assets/getWebsite.php");
 include_once("assets/header.php");
 
 include_once("assets/siteEntry.php");
-include_once("assets/sitesLookup.php");
+//include_once("assets/sitesLookup.php");
+
+//connect to database
+$db = dbConn();
 
 
-include_once ("assets/footer.php");
+// get the data from user, if any, and sanitize it.
+$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ??
+    filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
+$searchTerm = filter_input(INPUT_GET, 'term', FILTER_SANITIZE_URL) ?? filter_input(INPUT_POST, 'term', FILTER_SANITIZE_URL) ?? null;
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT) ?? null;
+
+
+switch ($action) {
+
+    case "Search":
+        $html = get_HTML($searchTerm);
+        $searchDate = date('m/d/Y');
+        $urls = find_URLs($html);
+        add_URLS($db, $searchTerm, $urls, $searchDate);
+        break;
+
+    case "Reset":
+        header("Location: index.php");
+        break;
+
+    DEFAULT:
+
+        break;
+
+}
+
+include_once("assets/footer.php");
