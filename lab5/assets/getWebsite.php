@@ -50,23 +50,33 @@ function find_URLs($websiteHTML)
 
 function add_URLS($db, $site, $urls, $date)
 {
+    //This damned piece of code was the biggest hurdle here. Gets the max ID from the sites table
     $counter = count($urls);
+   $getID = $db->query("SELECT MAX(site_id) FROM sites; ");
+   $getID->execute();
+    $currentMaxID= $getID->fetch(PDO::FETCH_NUM);
+    //print_r($currentMaxID);
 
+$newID = $currentMaxID[0] + 1;
+
+print_r($newID);
 
     try {
 
 
-        $query = "INSERT INTO sites VALUES (null, '$site', '$date' );";
+        $query = "INSERT INTO sites VALUES (null, '$site', '$date' ); ";
 
         //$query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
         echo "<pre>";
         //"INSERT INTO sitelinks (site_id, link) VALUES ((SELECT site_id FROM sites WHERE site_id='$key'), 'http://schema.org')"
+
         $query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
+
         foreach ($urls as $key => $value) {
             //$query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
-            $query .= "((SELECT site_id FROM sites WHERE site_id=(@@identity)), '$urls[$key]')";
-            if($key < $counter) {
-                $query .= ",";
+            $query .= "($newID,  '$urls[$key]')";
+            if($key < $newID) {
+                $query .= ", ";
             }
 
             /*
@@ -98,16 +108,11 @@ function add_URLS($db, $site, $urls, $date)
             */
 
         }
+
         echo "</pre>";
         print_r($query);
-        print_r($key);
+        //print_r($key);
         $sql = $db->prepare($query);
-
-        echo "<pre>";
-        print_r($sql);
-        echo "</pre>";
-        //$sql->bindParam(':site', $site);
-        // $sql->bindParam(':date', $date);
 
         $sql->execute();
         /*
@@ -121,7 +126,9 @@ function add_URLS($db, $site, $urls, $date)
         */
         return "Successfully added website";
     } catch (PDOException $e) {
+       print_r($sql->errorInfo());
         die("There was a problem adding website");
+
     }
 }
 
