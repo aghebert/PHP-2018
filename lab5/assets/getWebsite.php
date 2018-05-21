@@ -57,7 +57,7 @@ function add_URLS($db, $site, $urls, $date)
     $currentMaxID= $getID->fetch(PDO::FETCH_NUM);
     //print_r($currentMaxID);
 
-$newID = $currentMaxID[0] + 1;
+$newID = $currentMaxID[0];
 
 print_r($newID);
 
@@ -75,7 +75,7 @@ print_r($newID);
         foreach ($urls as $key => $value) {
             //$query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
             $query .= "($newID,  '$urls[$key]')";
-            if($key < $newID) {
+            if($key < $counter - 1) {
                 $query .= ", ";
             }
 
