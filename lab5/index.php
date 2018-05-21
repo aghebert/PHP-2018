@@ -11,6 +11,12 @@ ini_set('display_errors', '1');
 ini_set('log_errors', '0');
 ini_set('error_log', './');
 
+require '../vendor/autoload.php';
+use Aws\S3\S3Client;
+use Aws\DynamoDb\Exception\DynamoDbException;
+
+
+
 require_once("assets/dbconn.php");
 require_once("assets/getWebsite.php");
 include_once("assets/header.php");
