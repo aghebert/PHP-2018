@@ -7,6 +7,18 @@
  */
 
 
+function validateSearchTerm($searchTerm){
+    if(preg_match('/([a-z]{1,2}tps?):\/\/([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,15}/', $searchTerm) == 1){
+
+    }else {
+        header("Location: index.php");
+        echo ("That is a not a valid website");
+        exit();
+    }
+
+}
+
+
 //Thank you internet (https://davidwalsh.name/curl-download)
 // Gets the html from the website passed in to $url and returns it. Comments are mine.
 function get_HTML($url)
@@ -16,16 +28,21 @@ function get_HTML($url)
     //sets timeout
     $timeout = 5;
     //sets the url
-    curl_setopt($ch, CURLOPT_URL, $url);
-    //sets the return as a string instead of outputting the value
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    //number of seconds to wait while trying to connect
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    $data = curl_exec($ch);
-    //closes curl session
-    curl_close($ch);
-    return $data;
 
+    if(curl_setopt($ch, CURLOPT_URL, $url) == true) {
+
+        //sets the return as a string instead of outputting the value
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //number of seconds to wait while trying to connect
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $data = curl_exec($ch);
+        //closes curl session
+        curl_close($ch);
+        return $data;
+    } else{
+        echo "This is not a valid website";
+        exit(1);
+    }
 
 }
 
@@ -59,7 +76,7 @@ function add_URLS($db, $site, $urls, $date)
 
 $newID = $currentMaxID[0] + 1;
 
-print_r($newID);
+//print_r($newID);
 
     try {
 
@@ -94,4 +111,6 @@ print_r($newID);
 
     }
 }
+
+
 

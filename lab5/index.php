@@ -6,15 +6,9 @@
  * Time: 4:03 PM
  */
 
-error_reporting(E_ALL & E_STRICT);
-ini_set('display_errors', '1');
-ini_set('log_errors', '0');
-ini_set('error_log', './');
 
 require '../vendor/autoload.php';
 
-use Aws\S3\S3Client;
-use Aws\DynamoDb\Exception\DynamoDbException;
 
 
 require_once("assets/dbconn.php");
@@ -22,7 +16,9 @@ require_once("assets/getWebsite.php");
 require_once("assets/addHTML.php");
 include_once("assets/header.php");
 
-include_once("assets/siteEntry.php");
+
+
+
 //include_once("assets/sitesLookup.php");
 
 //connect to database
@@ -38,9 +34,13 @@ $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) ?? filter_input(INPUT_P
 
 switch ($action) {
 
+
     case "Search":
+        validateSearchTerm($searchTerm);
+        $searchDate = DateTime::createFromFormat('Y-m-d', 'H:i:s');
+        //$output = $date->format('F j, Y');
+        //$searchDate = date("Y-m-d H:i:s");//date('m-d-Y');
         $html = get_HTML($searchTerm);
-        $searchDate = date('m-d-Y');
         $urls = find_URLs($html);
 
         add_URLS($db, $searchTerm, $urls, $searchDate);
@@ -51,8 +51,20 @@ switch ($action) {
         header("Location: index.php");
         break;
 
-    DEFAULT:
+    case "siteEntry":
+        include("assets/siteEntry.php");
+        echo "siteentry";
+        break;
 
+    case "sitesLookup":
+        $fetchedURLS = fetchURLS($db);
+        include("assets/sitesLookup.php");
+        echo "sitelookup";
+        break;
+
+    DEFAULT:
+//default loading page
+        include_once("assets/siteEntry.php");
         break;
 
 }
