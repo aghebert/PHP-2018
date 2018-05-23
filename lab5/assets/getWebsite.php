@@ -38,11 +38,11 @@ function find_URLs($websiteHTML)
 
     preg_match_all('/([a-z]{1,2}tps?):\/\/([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,15}/', $websiteHTML, $inpageURLs);
 
-    echo "<pre>";
+    //echo "<pre>";
     //removes duplicates and prints it to the page
     $inpageURLs = array_values(array_unique($inpageURLs[0], SORT_REGULAR));
-    print_r($inpageURLs);
-    echo "</pre>";
+    //print_r($inpageURLs);
+    //echo "</pre>";
 
 
     return $inpageURLs;
@@ -57,73 +57,36 @@ function add_URLS($db, $site, $urls, $date)
     $currentMaxID= $getID->fetch(PDO::FETCH_NUM);
     //print_r($currentMaxID);
 
-$newID = $currentMaxID[0];
+$newID = $currentMaxID[0] + 1;
 
 print_r($newID);
 
     try {
 
-
+//creates SQL statement that inserts data to sites and sitelinks
         $query = "INSERT INTO sites VALUES (null, '$site', '$date' ); ";
-
-        //$query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
-        echo "<pre>";
-        //"INSERT INTO sitelinks (site_id, link) VALUES ((SELECT site_id FROM sites WHERE site_id='$key'), 'http://schema.org')"
-
+        //echo "<pre>";
         $query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
-
+//for loop to insert each link found
         foreach ($urls as $key => $value) {
-            //$query .= "INSERT INTO sitelinks ( site_id, link ) VALUES ";
+
             $query .= "($newID,  '$urls[$key]')";
             if($key < $counter - 1) {
                 $query .= ", ";
             }
 
-            /*
-            $query .= "(";
-            $query .= $site;
-            $query .= ", ";
-            $query .= $urls;
-            $query .= ")";
-            if($key < $value){
-                $query .= ",";
-            }
-            echo("Got here too");
-*/
-            /*
-            $query .= "bindParam($key, $value)";
-
-            echo $value;
-            echo $key;
-
-            $query .= "(null, \'";
-            $query .= $urls[$key];
-
-            if ($key < $counter) {
-                $query .= "\' ),";
-            } else {
-                $query .= "\' )";
-            }
-            }
-            */
 
         }
 
-        echo "</pre>";
-        print_r($query);
-        //print_r($key);
+       // echo "</pre>";
+        //print_r($counter);
+        //print_r($query);
+
+
         $sql = $db->prepare($query);
 
         $sql->execute();
-        /*
-                $sql = 'SELECT * FROM Organization WHERE City = :City AND State= :State';
-                $wherestr = array('string1', 'string2');
-                $stmt = $db->prepare($sql);
-                $stmt->bindParam(':City', $wherestr[0]);
-                $stmt->bindParam(':State', $wherestr[1]);
-                $stmt->execute();
 
-        */
         return "Successfully added website";
     } catch (PDOException $e) {
        print_r($sql->errorInfo());

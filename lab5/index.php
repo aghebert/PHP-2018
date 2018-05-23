@@ -12,13 +12,14 @@ ini_set('log_errors', '0');
 ini_set('error_log', './');
 
 require '../vendor/autoload.php';
+
 use Aws\S3\S3Client;
 use Aws\DynamoDb\Exception\DynamoDbException;
 
 
-
 require_once("assets/dbconn.php");
 require_once("assets/getWebsite.php");
+require_once("assets/addHTML.php");
 include_once("assets/header.php");
 
 include_once("assets/siteEntry.php");
@@ -39,9 +40,11 @@ switch ($action) {
 
     case "Search":
         $html = get_HTML($searchTerm);
-        $searchDate = date('m/d/Y');
+        $searchDate = date('m-d-Y');
         $urls = find_URLs($html);
+
         add_URLS($db, $searchTerm, $urls, $searchDate);
+       output($urls, $searchDate, $searchTerm);
         break;
 
     case "Reset":
