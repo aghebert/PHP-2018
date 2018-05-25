@@ -7,12 +7,13 @@
  */
 
 
-function validateSearchTerm($searchTerm){
-    if(preg_match('/([a-z]{1,2}tps?):\/\/([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,15}/', $searchTerm) == 1){
+function validateSearchTerm($searchTerm)
+{
+    if (preg_match('/([a-z]{1,2}tps?):\/\/([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,15}/', $searchTerm) == 1) {
 
-    }else {
+    } else {
         header("Location: index.php");
-        echo ("That is a not a valid website");
+        echo("That is a not a valid website");
         exit();
     }
 
@@ -29,7 +30,7 @@ function get_HTML($url)
     $timeout = 5;
     //sets the url
 
-    if(curl_setopt($ch, CURLOPT_URL, $url) == true) {
+    if (curl_setopt($ch, CURLOPT_URL, $url) == true) {
 
         //sets the return as a string instead of outputting the value
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -39,7 +40,7 @@ function get_HTML($url)
         //closes curl session
         curl_close($ch);
         return $data;
-    } else{
+    } else {
         echo "This is not a valid website";
         exit(1);
     }
@@ -69,12 +70,14 @@ function add_URLS($db, $site, $urls, $date)
 {
     //This damned piece of code was the biggest hurdle here. Gets the max ID from the sites table
     $counter = count($urls);
-   $getID = $db->query("SELECT MAX(site_id) FROM sites; ");
-   $getID->execute();
-    $currentMaxID= $getID->fetch(PDO::FETCH_NUM);
+    $getID = $db->query("SELECT MAX(site_id) FROM sites; ");
+    $getID->execute();
+    $currentMaxID = $getID->fetch(PDO::FETCH_NUM);
     //print_r($currentMaxID);
 
-$newID = $currentMaxID[0] + 1;
+    $date = $date->format('Y-m-d H:i:s');
+
+    $newID = $currentMaxID[0] + 1;
 
 //print_r($newID);
 
@@ -88,14 +91,14 @@ $newID = $currentMaxID[0] + 1;
         foreach ($urls as $key => $value) {
 
             $query .= "($newID,  '$urls[$key]')";
-            if($key < $counter - 1) {
+            if ($key < $counter - 1) {
                 $query .= ", ";
             }
 
 
         }
 
-       // echo "</pre>";
+        // echo "</pre>";
         //print_r($counter);
         //print_r($query);
 
@@ -106,7 +109,7 @@ $newID = $currentMaxID[0] + 1;
 
         return "Successfully added website";
     } catch (PDOException $e) {
-       print_r($sql->errorInfo());
+        print_r($sql->errorInfo());
         die("There was a problem adding website");
 
     }
