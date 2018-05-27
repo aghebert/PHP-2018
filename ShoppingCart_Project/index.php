@@ -35,15 +35,19 @@ switch ($action) {
         if($registered_user == true && $admin_rights == true){
 
         }else{*/
+        echo "<div class=\"container\">";
         echo "<h1>Administrator Login / Registration</h1>";
-        include_once("assets/login_register.php");
+        echo"</div>";
+        include_once("assets/login_register_interface.php");
         //}
 
         break;
 
     case 'LOGIN':
+        echo "<div class=\"container\">";
         echo "<h1>Login / Registration</h1>";
-        include_once("assets/login_register.php");
+        echo"</div>";
+        include_once("assets/login_register_interface.php");
         break;
 
 

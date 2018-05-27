@@ -12,7 +12,7 @@ require("../assets/dbconn.php");
 
 $db = dbConn();
 
-$query = "DROP TABLE users, products, categories;";
+$query = "DROP TABLE  customers, orders, order_items, users, products, categories ;";
 
 try{
 
