@@ -31,7 +31,7 @@ $email;
 
 switch ($action) {
 
-
+//brings the user to the Admin login and registration page
     case "ADMIN":
 
         $_POST['whereami']  = "ADMIN";
@@ -45,6 +45,7 @@ switch ($action) {
 
         break;
 
+        //brings the user to the customer login and registration page
     case 'GETIN':
        $_POST['whereami'] = 'GETIN';
         echo "<div class=\"container\">";
@@ -55,12 +56,14 @@ switch ($action) {
 
         break;
 
+        //starts the login process when the forms are filled out
     case 'LOGIN':
         echo $_POST['whereami'];
         echo $_POST['action'];
         echo "hello";
         break;
 
+        //starts the registration process when the forms are filled out
     case 'REGISTER':
         echo $_POST['whereami'];
         echo $_POST['action'];

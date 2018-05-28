@@ -5,7 +5,9 @@
  * Date: 5/26/18
  * Time: 5:40 PM
  */
+//Functions for controlling and validating login and registration
 
+//this is a test function. It's not used for anything
 function checkPOST()
 {
     if (isset($_POST['emailLogin']) == true) {
@@ -30,6 +32,7 @@ function checkPOST()
     }
 }
 
+//validates email
 function validateEmailFormat($givenEmail)
 {
 
@@ -41,6 +44,7 @@ function validateEmailFormat($givenEmail)
     }
 }
 
+//validates if email exists in the server based on what page the user was on
 function checkIfEmailExists($db, $givenEmail, $from)
 {
     try {
@@ -63,6 +67,7 @@ function checkIfEmailExists($db, $givenEmail, $from)
     }
 }
 
+//registers the user with the servers as a customer or user based on what page they were on
 function registerUser($db, $from, $email, $pass){
 
     $getID = $db->query("SELECT MAX(site_id) FROM $from; ");

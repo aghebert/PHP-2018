@@ -8,7 +8,8 @@
 
 ?>
 
-<!-- referenced from w3schools.com-->
+<!-- referenced from w3schools.com
+These are the input for login and registration-->
 <form action="" method="post" class="container">
     <div>
 
